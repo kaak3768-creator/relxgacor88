@@ -1,0 +1,152 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>RelxGamble | Casino RelxMC</title>
+<style>
+:root{--g:#16a34a;--g2:#0f7a37;--bg:#eefaf1;--t:#12261a;--m:#5b7164;--l:#d3ebd9;--r:#e5484d}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{margin:0;background:linear-gradient(180deg,#e8f8ec,#f7fdf9);color:var(--t);font-family:system-ui,Arial,sans-serif;min-height:100vh}
+button{font:inherit;cursor:pointer}.app{display:flex;max-width:1400px;margin:auto}
+aside{width:270px;padding:18px;position:sticky;top:0;height:100vh;flex:none}
+.brand{background:linear-gradient(135deg,#0f6b34,#16a34a);color:#fff;font-size:30px;font-weight:900;padding:16px 18px;border-radius:14px}.brand b{color:#c8ffd9}
+.wal{background:#fff;border:1px solid var(--l);border-radius:14px;padding:16px;margin-top:14px}.wal small{color:var(--m)}.wal h2{margin:4px 0 12px;font-size:26px}
+.col{flex:1;min-width:0}.nav{display:flex;gap:8px;align-items:center;padding:14px 18px;flex-wrap:wrap}
+.nav a,.pill{padding:10px 16px;border-radius:10px;color:var(--t);text-decoration:none;font-weight:700;background:none;border:0}.nav a.on{background:#d9f5e1;color:var(--g2)}
+.nav .sp{margin-left:auto}.btn{background:var(--g);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:800;width:100%}.btn.s{width:auto;padding:9px 14px}.btn.alt{background:#2f4a3a}.btn.red{background:var(--r)}.btn.gh{background:#fff;color:var(--g2);border:1px solid var(--g)}.btn:disabled{opacity:.45}
+main{padding:0 18px 50px}.hero{background:linear-gradient(120deg,#0f7a37,#4ade80);color:#fff;border-radius:18px;padding:26px;font-size:15px}.hero h1{margin:0 0 6px;font-size:28px}
+h2.sec{border-left:5px solid var(--g);padding-left:10px;margin:22px 0 12px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tabs button{padding:9px 16px;border-radius:99px;border:1px solid var(--l);background:#fff;font-weight:700}.tabs .on{background:var(--g);color:#fff;border-color:var(--g)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.tile{display:block;text-decoration:none;color:#fff;border-radius:16px;aspect-ratio:.92;position:relative;overflow:hidden;box-shadow:0 6px 16px #0a3a1a22;transition:.15s}.tile:hover{transform:translateY(-4px)}
+.tile .e{position:absolute;inset:0 0 34% 0;display:flex;align-items:center;justify-content:center;font-size:64px;filter:drop-shadow(0 6px 8px #0005)}
+.tile b{position:absolute;left:0;right:0;bottom:22px;text-align:center;font-size:19px;font-weight:900;text-shadow:0 2px 4px #0006}.tile i{position:absolute;left:0;right:0;bottom:8px;text-align:center;font-size:9px;letter-spacing:2px;font-style:normal;opacity:.85}
+.card{background:#fff;border:1px solid var(--l);border-radius:16px;padding:18px}.two{display:grid;grid-template-columns:320px 1fr;gap:16px}
+.stage{min-height:330px;border-radius:14px;background:radial-gradient(circle at 50% 30%,#fff,#e2f6e8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;position:relative;overflow:hidden;text-align:center}
+.in{width:100%;padding:12px;border:1px solid #bfdcc8;border-radius:10px;font:inherit;font-size:16px;margin:6px 0 8px;background:#fbfffc}label{font-size:13px;color:var(--m);font-weight:700}
+.chips{display:flex;gap:6px;margin-bottom:12px}.chips button{flex:1;padding:8px;border:1px solid #bfdcc8;background:#fff;border-radius:8px;font-weight:700}
+.out{min-height:26px;font-weight:800;margin-top:10px}.win{color:var(--g2)}.lose{color:var(--r)}.m{color:var(--m)}.big{font-size:56px;font-weight:900}.huge{font-size:90px;line-height:1}
+.opts{display:flex;gap:8px;margin:8px 0}.opts>*{flex:1}
+.bg{display:grid;gap:8px;width:100%;max-width:360px}.k5{grid-template-columns:repeat(5,1fr)}.k8{grid-template-columns:repeat(8,1fr)}
+.tl{aspect-ratio:1;border:0;border-radius:10px;background:#cfe9d6;font-size:24px;font-weight:800;padding:0}.tl.ok{background:#4ade80}.tl.bomb{background:#fca5a5}.tl.sel{background:var(--g);color:#fff}.tl.hit{background:#facc15}.tl.mis{background:#e5e7eb;color:#888}.tl:disabled{opacity:1}
+.pc{display:inline-block;background:#fff;border:1px solid #bbb;border-radius:8px;padding:8px 10px;margin:3px;font-weight:800;color:#111;box-shadow:0 2px 4px #0002}.pc.h{color:var(--r)}.pc.bk{background:#2f4a3a;color:#2f4a3a}
+.spin{animation:sp 1s ease}@keyframes sp{to{transform:rotateY(1080deg)}}
+.pk{position:relative;width:100%;max-width:420px;height:300px}.pk .d{position:absolute;width:8px;height:8px;border-radius:50%;background:#9bc9a8;transform:translate(-50%,-50%)}.pk .bl{position:absolute;width:20px;height:20px;border-radius:50%;background:#f59e0b;transform:translate(-50%,-50%);transition:all .22s linear;box-shadow:0 3px 6px #0004}.pk .bn{position:absolute;top:262px;width:10%;transform:translateX(-50%);padding:6px 0;border-radius:6px;background:#cfe9d6;font-size:11px;font-weight:800}.pk .bn.on{background:#facc15}
+.wh{width:250px;height:250px;border-radius:50%;position:relative;border:6px solid #fff;box-shadow:0 6px 16px #0003;transition:transform 4s cubic-bezier(.1,.7,.1,1);background:conic-gradient(#16a34a 0 30deg,#bbf7d0 30deg 60deg,#16a34a 60deg 90deg,#bbf7d0 90deg 120deg,#16a34a 120deg 150deg,#bbf7d0 150deg 180deg,#16a34a 180deg 210deg,#bbf7d0 210deg 240deg,#16a34a 240deg 270deg,#bbf7d0 270deg 300deg,#16a34a 300deg 330deg,#bbf7d0 330deg 360deg)}.wh span{position:absolute;left:50%;top:0;height:50%;transform-origin:bottom center;font-weight:900;font-size:14px;width:40px;margin-left:-20px;padding-top:12px}
+.lane{display:flex;gap:4px;width:100%;max-width:420px}.lane div{flex:1;padding:10px 0;border-radius:8px;background:#cfe9d6;font-size:20px}.lane .on{background:#4ade80}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--l)}
+.modal{display:none;position:fixed;inset:0;background:#0008;align-items:center;justify-content:center;padding:16px;z-index:20}.modal.on{display:flex}.box{background:#fff;border-radius:16px;padding:20px;width:min(420px,100%)}
+.sc{display:none}.sc.on{display:block}.mnav{display:none}
+@media(max-width:860px){aside{display:none}.two{grid-template-columns:1fr}.mnav{display:inline-block}.hero h1{font-size:22px}.nav{padding:10px}.tile .e{font-size:52px}.stage{min-height:280px}}
+</style></head><body>
+<div class="app">
+<aside><div class="brand">Relx<b>Gamble</b></div>
+<div class="wal"><small>Saldo koin</small><h2>🪙 <span class="bal">0</span></h2><button class="btn" onclick="location.hash='dep'">+ Deposit</button></div>
+<p class="m" style="font-size:12px">Koin virtual server RelxMC. Min taruhan &amp; deposit 5.000.000.</p></aside>
+<div class="col">
+<div class="nav"><a href="#home" data-s="home">🏠 Home</a><a href="#games" data-s="games">🎮 Games</a><a href="#dep" data-s="dep">💰 Deposit</a>
+<span class="pill mnav">🪙 <span class="bal">0</span></span>
+<button class="btn s sp" id="who" onclick="openLogin()">Masuk</button><a href="#admin" data-s="admin" style="background:#12261a;color:#fff">🛡 Admin</a></div>
+<main>
+<section class="sc" id="s-home"><div class="hero"><h1>Selamat datang di RelxGamble</h1>Mainkan 14 game dengan koin virtual server RelxMC. Hasil game ditentukan server.</div><h2 class="sec">🎮 Games</h2><div class="tabs" id="tabs"></div><div class="grid" id="grid"></div></section>
+<section class="sc" id="s-game"><button class="btn gh s" onclick="location.hash='home'">← Kembali</button><h2 class="sec" id="gt"></h2>
+<div class="two"><div class="card"><label>Taruhan (min 5.000.000)</label><input id="bet" class="in" inputmode="numeric" autocomplete="off" value="5.000.000" oninput="fb(this)"><div class="chips"><button onclick="bt('min')">Min</button><button onclick="bt(.5)">½</button><button onclick="bt(2)">2×</button><button onclick="bt('max')">Max</button></div><div id="ctl"></div><div class="out" id="out"></div></div>
+<div class="stage" id="stage"></div></div></section>
+<section class="sc" id="s-dep"><h2 class="sec">💰 Deposit</h2><div class="card" style="max-width:560px">
+<p>Kirim koin di server <b class="srv">relx</b> ke username:</p><div class="row"><b style="font-size:24px" class="pay">DimsGuyy1</b><button class="btn s" onclick="cp()">Salin</button></div>
+<p class="m">Setelah transfer, isi jumlah yang sama lalu ajukan. Admin akan menyetujui dan saldo masuk. Minimal 5.000.000 (contoh 5.000.000 atau 10.000.000).</p>
+<label>Jumlah koin</label><input id="da" class="in" inputmode="numeric" autocomplete="off" placeholder="5.000.000" oninput="fb(this)"><button class="btn" onclick="dep()">AJUKAN DEPOSIT</button><div class="out" id="dm"></div><h3>Riwayat</h3><div id="dl"></div></div></section>
+<section class="sc" id="s-admin"><h2 class="sec">🛡 Admin</h2><div class="card"><input id="ak" class="in" type="password" placeholder="Admin key"><button class="btn" onclick="adm()">Buka</button><div id="ad"></div></div></section>
+</main></div></div>
+<div class="modal" id="mL"><div class="box"><h3>Masuk / Daftar</h3><p class="m">Username Minecraft (3–16 karakter) dan password (min 6).</p><input id="lu" class="in" maxlength="16" autocomplete="username" placeholder="Username"><input id="lp" class="in" type="password" maxlength="64" autocomplete="current-password" placeholder="Password"><div class="opts"><button class="btn" onclick="login(0)">MASUK</button><button class="btn alt" onclick="login(1)">DAFTAR</button></div><div class="out lose" id="lm"></div><button class="btn gh" style="margin-top:8px" onclick="$('#mL').classList.remove('on')">Tutup</button></div></div>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],f=n=>String(Math.floor(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.'),R=n=>Math.floor(Math.random()*n),sleep=t=>new Promise(r=>setTimeout(r,t));
+let tk=localStorage.getItem('relx_tk')||'',me=localStorage.getItem('relx_user')||'',bal=0,cur='',busy=0,cfg={min:5000000},timer=0,ADK='',admT=0,admOn=0,admSig='';
+const api=async(u,b,h)=>{const r=await fetch(u,{method:b?'POST':'GET',headers:{'Content-Type':'application/json',...(tk?{Authorization:'Bearer '+tk}:{}),...h},body:b?JSON.stringify(b):undefined});const d=await r.json().catch(()=>({error:'Respon server tidak valid'}));if(!r.ok){if(r.status===401&&!(h&&h['x-admin-key'])&&tk)logout(1);throw Error(d.error||'Error')}return d};
+const setBal=n=>{bal=n;$$('.bal').forEach(e=>e.textContent=f(n))};
+const fb=e=>{const v=e.value.replace(/\D/g,'').replace(/^0+/,'');e.value=v?f(v):''};
+const gb=()=>parseInt(($('#bet').value||'0').replace(/\D/g,''),10)||0;
+function bt(x){$('#bet').value=f(x==='min'?cfg.min:x==='max'?bal:Math.max(cfg.min,Math.floor(gb()*x)))}
+const out=(t,c)=>{$('#out').className='out '+(c||'');$('#out').innerHTML=t};
+const res=(pay,b)=>{const n=pay-b;out(n>=0?`MENANG +${f(n)} 🎉`:`KALAH −${f(-n)}`+(pay?` (kembali ${f(pay)})`:''),n>=0?'win':'lose')};
+async function refresh(){if(!me)return;try{setBal((await api('/api/me?username='+encodeURIComponent(me))).balance)}catch(e){}}
+function paintUser(){$('#who').textContent=me?'👤 '+me:'Masuk'}
+function logout(q){me='';tk='';localStorage.removeItem('relx_user');localStorage.removeItem('relx_tk');setBal(0);paintUser();if(q)$('#mL').classList.add('on')}
+function openLogin(){if(me){if(confirm('Keluar dari '+me+'?'))logout();return}$('#mL').classList.add('on')}
+async function login(reg){try{const u=await api(reg?'/api/register':'/api/login',{username:$('#lu').value.trim(),password:$('#lp').value});me=u.username;tk=u.token;localStorage.setItem('relx_user',me);localStorage.setItem('relx_tk',tk);setBal(u.balance);paintUser();$('#lp').value='';$('#lm').textContent='';$('#mL').classList.remove('on');route()}catch(e){$('#lm').textContent=e.message}}
+function need(){if(me)return 1;$('#mL').classList.add('on');return 0}
+const betUI='';
+const ST=(c,x)=>`<div class="opts">${c}</div>`;
+/* ===== helper main ===== */
+async function play(game,params){if(busy||!need())return;const b=gb();busy=1;out('…');try{const r=await api('/api/play',{username:me,game,bet:b,params});setBal(r.balance);r.b=b;return r}catch(e){out(e.message,'lose')}finally{busy=0}}
+async function st(params){if(busy||!need())return;busy=1;try{const r=await api('/api/start',{username:me,game:cur,bet:gb(),params});out('');return r}catch(e){out(e.message,'lose')}finally{busy=0}}
+async function ac(action,idx){if(busy)return;busy=1;try{const r=await api('/api/act',{username:me,action,idx});if(r.balance!=null)setBal(r.balance);G[cur].paint(r)}catch(e){out(e.message,'lose')}finally{busy=0}}
+const go=async()=>{const r=await st(G[cur].params&&G[cur].params());if(r){setBal(r.balance);G[cur].paint(r)}};
+const startBtn=`<button class="btn" onclick="go()">MULAI</button>`;
+const lock=v=>{$('#bet').disabled=v;$$('#ctl select').forEach(e=>e.disabled=v)};
+function fin(v,t){lock(0);$('#act').innerHTML=startBtn;if(v.payout>0&&!v.lost&&!v.crashed)res(v.payout,v.bet);else out(t||`KALAH −${f(v.bet)}`,'lose')}
+function live(h){lock(1);$('#act').innerHTML=h}
+const cash=(v)=>`<button class="btn" onclick="ac('cash')" ${v.mult&&(v.n||(v.picked||[]).length||v.game==='crash')?'':'disabled'}>CASH OUT ${f(v.bet*v.mult)}</button>`;
+/* ===== game definitions ===== */
+const pcs=(h,hide)=>h.map(c=>`<span class="pc ${'♥♦'.includes(c.s)?'h':''}">${c.r}${c.s}</span>`).join('')+(hide?'<span class="pc bk">??</span>':'');
+const iBtn=(l,fn,c='')=>`<button class="btn ${c}" onclick="${fn}">${l}</button>`;
+const ladder=(emoji,lose,label,vis)=>({k:'cash',ctl:'<div id="act">'+startBtn+'</div>',stage:'<div id="sv"></div>',init(){this.vis(0)},vis,paint(v){if(v.done){this.vis(v.n,v.lost);return fin(v,v.lost?lose:null)}this.vis(v.n);out(v.n?`x${v.mult}`:'');live(iBtn(label,"ac('step')")+'<div style="height:8px"></div>'+cash(v))}});
+const W=[0,1.2,0,1.5,0,1.2,0,2,0,1.5,0,4];
+const G={
+mines:{n:'Mines',e:'💎',c:['#0fa07a','#5fe0b8'],k:'cash',ctl:'<label>Jumlah bom</label><select id="mc" class="in"><option>1</option><option selected>3</option><option>5</option><option>10</option></select><div id="act">'+startBtn+'</div>',stage:'<div class="bg k5" id="grid"></div>',
+ params:()=>({mines:$('#mc').value}),init(){this.paint({picked:[],mines:[]})},
+ paint(v){const pk=v.picked||[],m=v.mines||[],on=!v.done&&v.game;$('#grid').innerHTML=[...Array(25)].map((_,i)=>`<button class="tl ${pk.includes(i)?'ok':''} ${v.done&&m.includes(i)?'bomb':''}" ${!on||pk.includes(i)?'disabled':''} onclick="ac('pick',${i})">${pk.includes(i)?'💎':v.done&&m.includes(i)?'💣':''}</button>`).join('');
+  if(v.done)return fin(v,v.lost?'BOOM! 💥 Kamu kena bom':null);out(pk.length?`x${v.mult}`:'');live(cash(v))}},
+crash:{n:'Crash',e:'🚀',c:['#38bdf8','#a7f3d0'],k:'cash',ctl:'<div id="act">'+startBtn+'</div>',stage:'<div class="huge" id="rk">🚀</div><div class="big" id="cm">1.00x</div>',
+ init(){},params:()=>({}),
+ paint(v){clearInterval(timer);if(v.done){$('#cm').textContent=(v.crashed?v.point:v.mult).toFixed(2)+'x';$('#cm').className='big '+(v.crashed?'lose':'win');$('#rk').textContent=v.crashed?'💥':'🎉';return fin(v,v.crashed?`CRASH di x${v.point.toFixed(2)}`:null)}
+  const t0=Date.now()-v.elapsed;$('#cm').className='big';$('#rk').textContent='🚀';live(`<button class="btn" onclick="ac('cash')">CASH OUT</button>`);
+  timer=setInterval(()=>{const m=Math.exp(.00008*(Date.now()-t0));$('#cm').textContent=(Math.floor(m*100)/100).toFixed(2)+'x';$('#rk').style.transform=`translate(${Math.min(m*20,120)}px,${-Math.min(m*12,70)}px)`;if(!busy&&Date.now()%3===0)ac('poll')},120)}},
+cases:{n:'Cases',e:'🎁',c:['#d97706','#fcd34d'],k:'instan',ctl:iBtn('BUKA CASE',"cs()"),stage:'<div class="huge" id="cb">🎁</div><div class="big" id="cr"></div>'},
+plinko:{n:'Plinko',e:'⚪',c:['#0d9488','#5eead4'],k:'instan',ctl:iBtn('JATUHKAN BOLA',"pl()"),stage:'<div class="pk" id="pk"></div>',init(){const P=[13,3,1.3,.6,.4,.6,1.3,3,13];let h='';for(let r=0;r<8;r++)for(let c=0;c<=r;c++)h+=`<i class="d" style="left:${50+(2*c-r)*5.5}%;top:${22+r*30}px"></i>`;$('#pk').innerHTML=h+P.map((m,i)=>`<div class="bn" id="b${i}" style="left:${50+(2*i-8)*5.5}%">${m}x</div>`).join('')}},
+dice:{n:'Dice',e:'🎲',c:['#22c55e','#86efac'],k:'instan',ctl:'<label>Target <b id="dv">50</b></label><input type="range" id="dt" min="2" max="98" value="50" style="width:100%" oninput="dc()"><div class="opts"><button class="btn gh" id="du" onclick="dO(0)">Under</button><button class="btn gh" id="do" onclick="dO(1)">Over</button></div><div class="m" id="di"></div>'+iBtn('ROLL',"dr()"),stage:'<div class="huge">🎲</div><div class="big" id="dn">--</div>',init(){window.over=0;dO(0)}},
+blackjack:{n:'Blackjack',e:'🃏',c:['#15803d','#4ade80'],k:'meja',ctl:'<div id="act">'+startBtn+'</div>',stage:'<div class="m">Dealer</div><div id="dh"></div><div class="m">Kamu <b id="pt"></b></div><div id="ph"></div>',params:()=>({}),
+ paint(v){$('#dh').innerHTML=pcs(v.dealer,!v.done);$('#ph').innerHTML=pcs(v.player);$('#pt').textContent='('+v.pt+')';
+  if(v.done){const n={blackjack:'BLACKJACK! 🎉',win:'MENANG',push:'SERI',lose:'KALAH',bust:'BUST'}[v.outcome];fin(v,n+' − kalah');if(v.payout>=v.bet)out(n+' • bayar '+f(v.payout),v.payout>v.bet?'win':'');else out(n+` −${f(v.bet)}`,'lose');return}
+  live(`<div class="opts">${iBtn('HIT',"ac('hit')")}${iBtn('STAND',"ac('stand')",'alt')}</div>`)}},
+keno:{n:'Keno',e:'🔢',c:['#65a30d','#bef264'],k:'instan',ctl:'<div class="m" id="kn">Pilih 1–10 angka</div>'+iBtn('MAIN',"kp()"),stage:'<div class="bg k8" id="kg"></div>',init(){window.kp_=[];$('#kg').innerHTML=[...Array(40)].map((_,i)=>`<button class="tl" style="font-size:13px" id="k${i+1}" onclick="kt(${i+1})">${i+1}</button>`).join('')}},
+limbo:{n:'Limbo',e:'🎯',c:['#0891b2','#67e8f9'],k:'instan',ctl:'<label>Target pengali</label><input id="lt" class="in" inputmode="decimal" value="2.00">'+iBtn('MAIN',"lb()"),stage:'<div class="huge">🎯</div><div class="big" id="lx">1.00x</div>'},
+flip:{n:'Flip',e:'🪙',c:['#ca8a04','#fde047'],k:'cash',...ladder('🪙','TAILS! Streak putus','FLIP',function(n,l){$('#sv').innerHTML=`<div class="huge">${l?'❌':'🪙'}</div><div class="big">Streak ${n}</div><div class="m">Maks 10 — tiap flip menang x1.94</div>`})},
+roulette:{n:'Roulette',e:'🎡',c:['#166534','#22c55e'],k:'meja',ctl:'<div class="opts">'+iBtn('MERAH 2x',"ro('red')",'red')+iBtn('HITAM 2x',"ro('black')",'alt')+'</div>'+iBtn('HIJAU 0 — 35x',"ro('green')"),stage:'<div class="huge">🎡</div><div class="big" id="rn">--</div>'},
+chicken:{n:'Chicken',e:'🐔',c:['#a3e635','#ecfccb'],k:'cash',...ladder('🐔','Ditabrak mobil 🚗','MAJU',function(n,l){$('#sv').innerHTML=`<div class="lane">${[...Array(12)].map((_,i)=>`<div class="${i<n?'on':''}">${i===n-1&&!l?'🐔':i===n&&l?'🚗':''}</div>`).join('')}</div><div class="huge" style="margin-top:14px">${l?'💥':'🐔'}</div><div class="m">12 jalur — tiap langkah aman 80%</div>`})},
+wheel:{n:'Wheel',e:'🎡',c:['#16a34a','#facc15'],k:'instan',ctl:iBtn('PUTAR',"wl()"),stage:'<div style="font-size:30px;margin-bottom:-14px;z-index:2">▼</div><div class="wh" id="wh">'+W.map((m,i)=>`<span style="transform:rotate(${i*30+15}deg)">${m}x</span>`).join('')+'</div>'},
+pump:{n:'Pump',e:'🎈',c:['#f43f5e','#fda4af'],k:'cash',...ladder('🎈','POP! 💥','POMPA',function(n,l){$('#sv').innerHTML=`<div style="font-size:${60+n*6}px;line-height:1">${l?'💥':'🎈'}</div><div class="m">Maks 30 pompa — tiap pompa aman 90%</div>`})},
+coinflip:{n:'Coinflip',e:'🪙',c:['#d97706','#fbbf24'],k:'instan',ctl:'<div class="opts">'+iBtn('HEADS',"cf('heads')")+iBtn('TAILS',"cf('tails')",'alt')+'</div>',stage:'<div class="huge" id="cn">🪙</div><div class="big" id="cr2"></div>'}
+};
+/* ===== instan handlers ===== */
+async function cf(c){const r=await play('coinflip',{choice:c});if(!r)return;$('#cn').classList.remove('spin');void $('#cn').offsetWidth;$('#cn').classList.add('spin');await sleep(900);$('#cr2').textContent=r.d.r.toUpperCase();res(r.payout,r.b)}
+async function ro(c){const r=await play('roulette',{choice:c});if(!r)return;for(let i=0;i<10;i++){$('#rn').textContent=R(37);await sleep(70)}$('#rn').textContent=r.d.n+' '+{red:'🔴',black:'⚫',green:'🟢'}[r.d.c];res(r.payout,r.b)}
+const dc=()=>{const t=+$('#dt').value,ch=window.over?100-t:t;$('#dv').textContent=t;$('#di').textContent=`Peluang ${ch}% • x${(Math.floor(9700/ch)/100).toFixed(2)}`};
+const dO=o=>{window.over=o;$('#du').className='btn '+(o?'gh':'');$('#do').className='btn '+(o?'':'gh');dc()};
+async function dr(){const r=await play('dice',{target:+$('#dt').value,over:!!window.over});if(!r)return;for(let i=0;i<8;i++){$('#dn').textContent=(R(10000)/100).toFixed(2);await sleep(60)}$('#dn').textContent=r.d.roll.toFixed(2);res(r.payout,r.b)}
+async function lb(){const t=parseFloat($('#lt').value.replace(',','.'));const r=await play('limbo',{target:t});if(!r)return;$('#lx').textContent=r.d.x.toFixed(2)+'x';$('#lx').className='big '+(r.mult?'win':'lose');res(r.payout,r.b)}
+async function wl(){const r=await play('wheel',{});if(!r)return;const w=$('#wh'),c=parseFloat(w.dataset.r||0);const n=c-c%360+360*5+(360-(r.d.i*30+15));w.dataset.r=n;w.style.transform=`rotate(${n}deg)`;await sleep(4100);res(r.payout,r.b)}
+async function cs(){const L=[.2,.5,1,2,5,10,50],r=await play('cases',{});if(!r)return;$('#cb').classList.add('spin');for(let i=0;i<14;i++){$('#cr').textContent='x'+L[R(7)];await sleep(80)}$('#cb').classList.remove('spin');$('#cr').textContent='x'+r.mult;$('#cb').textContent=r.mult>=1?'💰':'📦';res(r.payout,r.b)}
+async function pl(){const r=await play('plinko',{});if(!r)return;$$('.bn').forEach(e=>e.classList.remove('on'));$('#pk .bl')?.remove();const b=document.createElement('i');b.className='bl';b.style.cssText='left:50%;top:0';$('#pk').appendChild(b);let x=0;for(let i=0;i<8;i++){x+=r.d.path[i]?1:-1;await sleep(40);b.style.left=50+x*5.5+'%';b.style.top=22+i*30+'px';await sleep(230)}b.style.top='262px';await sleep(250);$('#b'+r.d.bin).classList.add('on');res(r.payout,r.b)}
+function kt(n){const a=window.kp_,i=a.indexOf(n);if(i>=0)a.splice(i,1);else if(a.length<10)a.push(n);$$('#kg .tl').forEach(e=>e.className='tl');a.forEach(x=>$('#k'+x).classList.add('sel'));$('#kn').textContent=a.length?`Dipilih ${a.length}/10`:'Pilih 1–10 angka'}
+async function kp(){const a=window.kp_.slice();const r=await play('keno',{picks:a});if(!r)return;$$('#kg .tl').forEach(e=>e.className='tl');r.d.dr.forEach(n=>$('#k'+n).classList.add(a.includes(n)?'hit':'mis'));a.filter(n=>!r.d.dr.includes(n)).forEach(n=>$('#k'+n).classList.add('sel'));res(r.payout,r.b);$('#out').innerHTML+=` • ${r.d.h} cocok`}
+/* ===== screens ===== */
+const FL={all:'Semua',instan:'⚡ Instan',cash:'🚀 Cash-out',meja:'🃏 Meja'};let flt='all';
+function home(){$('#tabs').innerHTML=Object.entries(FL).map(([k,v])=>`<button class="${k===flt?'on':''}" onclick="flt='${k}';home()">${v}</button>`).join('');
+ $('#grid').innerHTML=Object.entries(G).filter(([k,g])=>flt==='all'||g.k===flt).map(([k,g])=>`<a class="tile" href="#game/${k}" style="background:linear-gradient(160deg,${g.c[0]},${g.c[1]})"><span class="e">${g.e}</span><b>${g.n.toUpperCase()}</b><i>RELX ORIGINALS</i></a>`).join('')}
+async function openGame(id){cur=id;clearInterval(timer);const g=G[id];$('#gt').textContent=g.e+' '+g.n;$('#ctl').innerHTML=g.ctl;$('#stage').innerHTML=g.stage;out('');lock(0);g.init&&g.init();
+ if(me&&g.k==='cash'||id==='blackjack'){try{const v=await api('/api/resume?username='+encodeURIComponent(me));if(v.game===id){setBal(v.balance);$('#bet').value=f(v.bet);g.paint(v)}else if(v.game)out('Selesaikan ronde '+v.game+' dulu','lose')}catch(e){}}}
+async function dep(){if(!need())return;const a=parseInt($('#da').value.replace(/\D/g,''),10)||0;try{await api('/api/deposit',{username:me,amount:a});$('#dm').className='out win';$('#dm').textContent='Deposit diajukan. Tunggu admin menyetujui.';$('#da').value='';depList()}catch(e){$('#dm').className='out lose';$('#dm').textContent=e.message}}
+async function depList(){if(!me)return;try{const d=await api('/api/mydeposits?username='+encodeURIComponent(me));$('#dl').innerHTML=d.length?d.map(x=>`<div class="row"><span>${f(x.amount)}</span><b class="${x.status==='APPROVED'?'win':'m'}">${x.status}</b></div>`).join(''):'<span class="m">Belum ada deposit.</span>'}catch(e){}}
+function cp(){const t=$('.pay').textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(()=>{const i=document.createElement('input');i.value=t;document.body.appendChild(i);i.select();document.execCommand('copy');i.remove()}).finally?.(()=>{})}
+const AH=()=>({'x-admin-key':ADK});
+function admRow(x){const n=x.username;return `<div class="row ur" data-u="${n.toLowerCase()}" style="flex-wrap:wrap"><span><span id="on-${n}">${x.online?'🟢':'⚪'}</span> <b>${n}</b><br><small class="m">Daftar ${x.created?new Date(x.created).toLocaleDateString('id-ID'):'-'}</small></span><b>🪙 <span id="bl-${n}">${f(x.balance)}</span></b><span style="display:flex;gap:6px;width:100%"><input class="in" id="ab-${n}" inputmode="numeric" autocomplete="off" oninput="fb(this)" placeholder="Jumlah saldo" style="margin:0"><button class="btn s" onclick="aadd('${n}',1)">+</button><button class="btn s red" onclick="aadd('${n}',-1)">−</button></span><span style="display:flex;gap:6px;width:100%"><input class="in" id="ap-${n}" autocomplete="off" placeholder="Password baru (min 6)" style="margin:0"><button class="btn s alt" onclick="apw('${n}')">Reset PW</button></span></div>`}
+function admF(){const q=$('#af').value.toLowerCase();$$('.ur').forEach(e=>e.style.display=e.dataset.u.includes(q)?'':'none')}
+async function adm(){ADK=$('#ak').value||ADK;try{const[u,d]=await Promise.all([api('/api/admin/users',0,AH()),api('/api/admin/deposits',0,AH())]);const sig=u.length+'|'+d.map(x=>x.status).join('');
+ if(sig!==admSig||!$('#au')){admSig=sig;$('#ad').innerHTML=`<h3>Pemain (${u.length}) <small class="m">• saldo live</small></h3><input class="in" id="af" placeholder="Cari username" oninput="admF()"><div id="au">${u.map(admRow).join('')||'<p class="m">Belum ada pemain.</p>'}</div><h3>Deposit</h3>`+(d.length?d.map(x=>`<div class="row"><span>${x.username} — ${f(x.amount)}<br><small class="m">${x.status}</small></span>${x.status==='PENDING'?`<button class="btn s" onclick="appr('${x.id}')">Setujui</button>`:''}</div>`).join(''):'<p class="m">Kosong</p>')}
+ else u.forEach(x=>{const b=$('#bl-'+x.username),o=$('#on-'+x.username);if(b)b.textContent=f(x.balance);if(o)o.textContent=x.online?'🟢':'⚪'});
+ if(!admOn){admOn=1;admT=setInterval(adm,3000)}}catch(e){$('#ad').innerHTML=`<p class="lose">${e.message}</p>`;clearInterval(admT);admOn=0}}
+const appr=async id=>{try{await api('/api/admin/deposit/'+id,{},AH());adm()}catch(e){alert(e.message)}};
+const aadd=async(u,s)=>{const a=(parseInt($('#ab-'+u).value.replace(/\D/g,''),10)||0)*s;if(!a)return;try{await api('/api/admin/balance',{username:u,amount:a},AH());$('#ab-'+u).value='';adm()}catch(e){alert(e.message)}};
+const apw=async u=>{const p=$('#ap-'+u).value;try{await api('/api/admin/password',{username:u,password:p},AH());$('#ap-'+u).value='';alert('Password '+u+' diganti')}catch(e){alert(e.message)}};
+function route(){const h=(location.hash||'#home').slice(1),[s,id]=h.split('/'),sc=G[id]&&s==='game'?'game':['home','games','dep','admin'].includes(s)?(s==='games'?'home':s):'home';
+ clearInterval(timer);clearInterval(admT);admOn=0;$$('.sc').forEach(e=>e.classList.toggle('on',e.id==='s-'+sc));$$('.nav a').forEach(a=>a.classList.toggle('on',a.dataset.s===s));scrollTo(0,0);
+ if(sc==='home')home();if(sc==='game')openGame(id);if(sc==='dep')depList();if(sc==='admin'&&ADK)adm();refresh()}
+addEventListener('hashchange',route);
+api('/api/config').then(c=>{cfg=c;$('.pay').textContent=c.payTo;$('.srv').textContent=c.server}).catch(()=>{});
+paintUser();route();setInterval(refresh,4000);
+</script></body></html>
