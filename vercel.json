@@ -1,0 +1,1 @@
+{"framework":null,"functions":{"api/index.js":{"includeFiles":"public/**"}},"rewrites":[{"source":"/api/(.*)","destination":"/api/index.js"}]}

@@ -1,0 +1,1 @@
+{"name":"relxgamble","version":"3.1.0","private":true,"engines":{"node":">=18"},"scripts":{"start":"node lib/app.js"},"dependencies":{"express":"^4.21.2"}}
